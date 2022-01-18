@@ -4,11 +4,53 @@
         <meta charset="utf-8">
         <title>BuyBuy - Lista de Compras</title>
         <link rel="stylesheet" href="css/style.css">
-        
+        <script src="js/script.js"></script>
     </head>
     <body>
-        <head>
-            <h1>Lista de compras - BuyBuy</h1>
-        </head>
+        <header>
+            <h1>Lista de compras - BuyBuy</h1>    
+        </header>
+
+        <main>
+            <div class="title">
+                <h2>Produtos</h2>
+            </div>
+
+            <div class = 'card'>
+                <div class="inputs">
+                    <label>Nome</label>
+                    <input type="text" id="name" placeholder="Nome do produto"> 
+                </div>
+                <div class="inputs">
+                    <label>Preço</label>
+                    <input type="number" id="valor" placeholder="Preço do Produto">
+                </div>
+
+                <button onclick="produto.addProduct()">Adicionar</button>
+                
+                
+
+            </div>
+
+            <div class="content">
+
+                <table border="1">
+                    <thead>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </thead>
+                    <tbody id="tbody">
+                       
+                    </tbody>
+                    
+                </table>
+                <button onclick="produto.deleteAllProduct()">Excluir Tudo</button>
+
+            </div>
+            
+            
+        </main>
     </body>
 </html>
