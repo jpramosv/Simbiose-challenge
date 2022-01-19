@@ -36,7 +36,6 @@ class Produto{
         tbody.innerText = '';
         for (let i = 1; i <= localStorage.length; i++) {            
             let tr = tbody.insertRow();
-
             let tdId = tr.insertCell();
             let tdName = tr.insertCell();
             let tdValor = tr.insertCell();
