@@ -3,7 +3,7 @@ class Produto{
 
 
     constructor(){
-        this.id = 1;
+        this.id = 0;
     }
 
     addProduct(){        
@@ -14,38 +14,63 @@ class Produto{
         localStorage.setItem(this.id, JSON.stringify(produto));  
         this.id ++;      
         this.listProduct();
-        alert('Product added');
+  
         
     }
  
     
     alterProduct(){
-        alert('Product Altered');
+                alert('Product Altered');
     }
 
-    deleteProduct(){
-        alert('Product Deleted')
+    deleteProduct(id){
+        debugger;
+        for(let i = 0; i<= localStorage.length; i++){
+          
+           if(localStorage.key(i) == id){
+               localStorage.removeItem(id);
+               
+           }
+
+        }
+       
+        alert('Product Deleted ' +id);
+        this.listProduct();
+
     }
 
     deleteAllProduct(){
         alert('Products Deleted')
+       
     }
 
     listProduct(){
+        debugger;
         let tbody = document.getElementById('tbody');
         tbody.innerText = '';
-        for (let i = 1; i <= localStorage.length; i++) {            
+        for ( var i = 0, len = localStorage.length; i < len; ++i ) {    
             let tr = tbody.insertRow();
             let tdId = tr.insertCell();
             let tdName = tr.insertCell();
             let tdValor = tr.insertCell();
             let tdAction = tr.insertCell();            
-            let item = JSON.parse(localStorage.getItem(i));
+            let item = JSON.parse(localStorage.getItem( localStorage.key( i ) )) ;
             
             
             tdId.innerText = item.id;
             tdName.innerText = item.name;            
             tdValor.innerText = item.valor;
+
+            let imgEdit = document.createElement('img');
+            let imgDelete = document.createElement('img');
+            imgEdit.src = 'img/editar.png';
+            imgDelete.src = 'img/excluir.png';
+            imgDelete.setAttribute("onclick","produto.deleteProduct("+item.id+")");
+
+            tdAction.appendChild(imgEdit);
+            tdAction.appendChild(imgDelete);
+
+            
             
 
         }
