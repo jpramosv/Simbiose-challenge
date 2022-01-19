@@ -1,0 +1,11 @@
+table{
+    border-collapse: collapse;
+    border: 1px solid; 
+}
+table th{
+    background-color: grey;
+}
+
+table td img{
+    width: 20px;
+}
