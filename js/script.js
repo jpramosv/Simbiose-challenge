@@ -24,6 +24,7 @@ class Produto{
             produto.id = this.edit;
             console.log(this.edit)
             localStorage.setItem(this.edit, JSON.stringify(produto)); 
+            this.edit = null;
             document.getElementById('btn1').innerText = 'Adicionar';
             this.listProduct();
         }
@@ -71,24 +72,24 @@ class Produto{
     }
 
     deleteAllProduct(){
-        alert('Products Deleted')
+        localStorage.clear();
+        this.listProduct();
+        alert('All the Products are Deleted')
        
     }
 
     listProduct(){
-        
+        let totalCarrinho = 0;
         let tbody = document.getElementById('tbody');
         tbody.innerText = '';
         for ( var i = 0, len = localStorage.length; i < len; ++i ) {    
             let tr = tbody.insertRow();
-            let tdId = tr.insertCell();
             let tdName = tr.insertCell();
             let tdValor = tr.insertCell();
             let tdAction = tr.insertCell();            
             let item = JSON.parse(localStorage.getItem( localStorage.key( i ) )) ;
             
             
-            tdId.innerText = item.id;
             tdName.innerText = item.name;            
             tdValor.innerText = item.valor;
 
@@ -102,9 +103,20 @@ class Produto{
             tdAction.appendChild(imgDelete);
 
             
+            totalCarrinho += parseInt(item.valor);   		          
             
 
+            
         }
+        let tr = tbody.insertRow();
+            let tdName = tr.insertCell();
+            let tdValor = tr.insertCell();
+            
+            tdName.innerText = "Total";            
+            tdValor.innerText = totalCarrinho; 
+
+            
+        console.log(totalCarrinho);
        
         
         
