@@ -50,21 +50,15 @@ img {
 
 .inputs{
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 500px;
-    border: 0ch;
+    flex-direction: column;
+        border: 0ch;
 }    
 .card{
-    
+    display: flex;
     border: 0ch;
     align-items: center;
 }
-label{
-    height: 25px;
-    width: 50px;
-    
-}
+
 
 
 
