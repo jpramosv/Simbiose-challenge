@@ -1,11 +1,71 @@
-table{
-    border-collapse: collapse;
-    border: 1px solid; 
-}
-table th{
-    background-color: grey;
-}
-
 table td img{
     width: 20px;
 }
+
+.introducao {
+    max-width: 960px;
+    margin: 50px auto;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+    align-items: center;
+    box-shadow: inset 0 0 1em gold, 0 0 1em red;
+    padding: 15px;
+    gap: 50px;
+  
+}
+.content {
+    max-width: 960px;
+    margin: 50px auto;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+    align-items: center; 
+    gap: 30px; 
+    
+  
+}
+img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+.img-introducao{
+    max-width: 430px;
+    flex: 1 1 400px;
+}
+
+.texto-indroducao{
+    flex: 2 1 300px;
+}
+
+.texto-indroducao h1{
+    font-size: 3em;
+    
+}
+
+.texto-indroducao p{
+    font-size: 1em;
+    color:gray;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 500px;
+    border: 0ch;
+}    
+.card{
+    
+    border: 0ch;
+    align-items: center;
+}
+label{
+    height: 25px;
+    width: 50px;
+    
+}
+
+
+
+
